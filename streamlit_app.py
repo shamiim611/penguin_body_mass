@@ -21,15 +21,14 @@ with st.expander('Data'):
   y = df['Body Mass (g)']
   y
 with st.expander('Data visualization'):
-  st.bar_chart(df, y ='Species', y_label = 'species',x_label= 'count' ,horizontal = False)
   st.scatter_chart(df, x= 'Flipper Length (mm)', y ='Body Mass (g)', color ='Species')
   st.scatter_chart(df, x= 'Culmen Length (mm)', y ='Body Mass (g)', color ='Species')
   st.scatter_chart(df, x= 'Culmen Depth (mm)', y ='Body Mass (g)', color ='Species')
   st.scatter_chart(df, x= 'Delta 15 N (o/oo)', y ='Body Mass (g)', color ='Species')
 
-#input features
+# input features
 with st.sidebar:
-  st.header('Inputfeatures')
+  st.header('Input features')
   Species = st.select_box('Species',('Adelie Penguin','Gentoo penguin','Chinstrap penguin'))
   Culmen_length = st.slider('Culmen length (mm)',32.1,59.6,44.25)
   Culmen_Depth = st.slider('Culmen Depth (mm)',13.1,21.5,17.4)
