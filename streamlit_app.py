@@ -10,7 +10,7 @@ st.title('Machine learning app')
 st.info('This is an app for a machine learning model that predicts penguin body mass')
 with st.expander('Data'):
   st.write('**raw data**')
-  df = pd.read_csv('https://raw.githubusercontent.com/shamiim611/penguin_body_mass/refs/heads/master/penguins_clean.csv')
+  df = pd.read_csv('https://raw.githubusercontent.com/shamiim611/penguin_body_mass/refs/heads/master/penguins_clean.csv',delimiter =',')
   df
   st.write('**X**')
   X =df.drop(columns= 'Body Mass (g)', axis =1)
