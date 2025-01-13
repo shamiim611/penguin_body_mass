@@ -21,8 +21,11 @@ with st.expander('Data'):
   y = df['Body Mass (g)']
   y
 with st.expander('Data visualization'):
+  st.bar_chart(df, y ='Species', y_label = 'species',x_label= 'count' horizontal = True)
   st.scatter_chart(df, x= 'Flipper Length (mm)', y ='Body Mass (g)', color ='Species')
   st.scatter_chart(df, x= 'Culmen Length (mm)', y ='Body Mass (g)', color ='Species')
+  st.scatter_chart(df, x= 'Culmen Depth (mm)', y ='Body Mass (g)', color ='Species')
+  st.scatter_chart(df, x= 'Delta 15 N (o/oo)', y ='Body Mass (g)', color ='Species')
   
   
   
