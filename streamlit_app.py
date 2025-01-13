@@ -14,6 +14,12 @@ with st.expander('Data'):
   df = pd.read_csv('https://raw.githubusercontent.com/shamiim611/penguin_body_mass/refs/heads/master/penguins_clean.xls')
                      
   df
+  st.write('**X**')
+  X = df.drop(columns= 'Body Mass (g)', axis =1)
+  X
+  st.write('**y**')
+  y = df['Body Mass (g)']
+  y
   
   
  
