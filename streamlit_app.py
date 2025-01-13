@@ -26,9 +26,7 @@ with st.expander('Data visualization'):
   st.scatter_chart(df, x= 'Culmen Length (mm)', y ='Body Mass (g)', color ='Species')
   st.scatter_chart(df, x= 'Culmen Depth (mm)', y ='Body Mass (g)', color ='Species')
   st.scatter_chart(df, x= 'Delta 15 N (o/oo)', y ='Body Mass (g)', color ='Species')
-'Species', 'Culmen Length (mm)', 'Culmen Depth (mm)',
-       'Flipper Length (mm)', 'Body Mass (g)', 'Sex', 'Delta 15 N (o/oo)',
-       'Delta 13 C (o/oo)']
+
 #input features
 with st.sidebar:
   st.header('Inputfeatures')
