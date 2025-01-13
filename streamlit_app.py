@@ -20,6 +20,10 @@ with st.expander('Data'):
   st.write('**y**')
   y = df['Body Mass (g)']
   y
+with st.expander('Data visualization'):
+  st.scatter_chart(df, x= 'Flipper Length (mm)', y ='Body Mass (g)', color ='Species')
+  st.scatter_chart(df, x= 'Culmen Length (mm)', y ='Body Mass (g)', color ='Species')
+  
   
   
  
