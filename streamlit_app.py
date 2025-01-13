@@ -30,11 +30,11 @@ with st.expander('Data visualization'):
 #input features
 with st.sidebar:
   st.header('Inputfeatures')
-  Species = st.select_box('Species',('Adelie Penguin','Gentoo penguin','Chinstrap penguin')
+  Species = st.select_box('Species',('Adelie Penguin','Gentoo penguin','Chinstrap penguin'))
   Culmen length = st.slider('Culmen length',32.1,59.6,44.25)
   Culmen Depth = st.slider('Culmen Depth',13.1,21.5,17.4)
   Flipper Length =st.slider('Flipper length',172,231,197)
-  Sex = st.select_box('Sex',('MALE','FEMALE')
+  Sex = st.select_box('Sex',('MALE','FEMALE'))
   Delta 15 N (o/oo)= st.slider('Delta 15',7.6,10,8.7)
   Delta 13 C (o/oo) =st.slider('Delta 13',-27.01,-23.8,-25.8)                       
   
