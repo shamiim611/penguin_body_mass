@@ -8,8 +8,14 @@ import sklearn
 st.title('Machine learning app')
 
 st.info('This is an app for a machine learning model that predicts penguin body mass')
-
-df = pd.read_csv('https://github.com/shamiim611/penguin_body_mass/blob/master/penguins_clean.xls',
+with st.expander('Data'):
+  st.write('**raw data**')
+  
+  df = pd.read_csv('https://github.com/shamiim611/penguin_body_mass/blob/master/penguins_clean.xls',
                     error_bad_lines = False)
-df
+  
+  df
+  
+  
+ 
  
