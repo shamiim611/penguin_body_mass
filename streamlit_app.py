@@ -29,7 +29,7 @@ with st.expander('Data visualization'):
 # input features
 with st.sidebar:
   st.header('Input features')
-  Species = st.select_box('Species',('Adelie Penguin','Gentoo penguin','Chinstrap penguin'))
+  Species = st.selectbox('Species',('Adelie Penguin','Gentoo penguin','Chinstrap penguin'))
   Culmen_length = st.slider('Culmen length (mm)',32.1,59.6,44.25)
   Culmen_Depth = st.slider('Culmen Depth (mm)',13.1,21.5,17.4)
   Flipper_Length =st.slider('Flipper length (mm)',172,231,197)
