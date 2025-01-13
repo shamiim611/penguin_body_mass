@@ -13,9 +13,4 @@ with st.expander('Data'):
   df = pd.read_csv('https://github.com/shamiim611/penguin_body_mass/blob/master/penguins_clean.xls',
                     on_bad_lines = 'skip')
   df
-  st.write('**X**')
-  X =df.drop(columns= 'Body Mass (g)', axis =1)
-  X
-  st.write('**y**')
-  y = df['Body Mass (g)']
-  y
+ 
