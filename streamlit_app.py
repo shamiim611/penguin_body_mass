@@ -33,7 +33,7 @@ with st.sidebar:
   Culmen_length = st.slider('Culmen length (mm)',32.1,59.6,44.25)
   Culmen_Depth = st.slider('Culmen Depth (mm)',13.1,21.5,17.4)
   Flipper_Length =st.slider('Flipper length (mm)',172,231,197)
-  Sex = st.select_box('Sex',('MALE','FEMALE'))
+  Sex = st.selectbox('Sex',('MALE','FEMALE'))
   Delta_15_N = st.slider('Delta 15 (o/oo)',7.6,10,8.7)
   Delta_13_C  =st.slider('Delta 13 (o/oo)',-27.01,-23.8,-25.8)                       
   
