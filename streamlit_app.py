@@ -79,11 +79,11 @@ model = Ridge(alpha =0.1)
 complete_pipeline = Pipeline([('preprocessor',preprocessor),
                  ('estimator',Ridge(alpha =0.1))
                  ])
-complete_pipeline.fit(input_penguins, y)
+complete_pipeline.fit(input_penguins.dropna(), y)
 
  #apply model to make predictions
-predictions = complete_pipeline.predict(input_penguins)
-predicted_mass = complete_pipeline.predict(input_df)
+predictions = complete_pipeline.predict(input_penguins.dropna())
+predicted_mass = complete_pipeline.predict(input_df.dropna())
 st.write('Predicted Mass:', predicted_mass)
 
                      
