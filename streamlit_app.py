@@ -43,7 +43,7 @@ data = {'Species':Species,
                      'Sex':Sex,
                      'Delta 15 (o/oo)':Delta_15_N,
                      'Delta 13 (o/oo)':Delta_13_C}
-input_df = pd.DataFrame(data, index[0]
+input_df = pd.DataFrame(data, index[0])
 input_penguins = pd.concat([input_df, X], axis =0)
                      
                      
