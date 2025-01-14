@@ -39,20 +39,20 @@ with st.expander('Data visualization'):
 with st.sidebar:
   st.header('Input features')
   Species = st.selectbox('Species',('Adelie Penguin','Gentoo penguin','Chinstrap penguin'))
-  Culmen_Length= st.slider('Culmen Length (mm)',32.1,59.6,44.25)
-  Culmen_Depth = st.slider('Culmen Depth (mm)',13.1,21.5,17.4)
-  Flipper_length =st.slider('Flipper length (mm)',172,231,197)
+  Culmen_Length= st.slider('Culmen_Length_(mm)',32.1,59.6,44.25)
+  Culmen_Depth = st.slider('Culmen_Depth_(mm)',13.1,21.5,17.4)
+  Flipper_length =st.slider('Flipper_length_(mm)',172,231,197)
   Sex = st.selectbox('Sex',('MALE','FEMALE'))
-  Delta_15= st.slider('Delta 15 (o/oo)',7.6,10.0,8.7)
-  Delta_13  =st.slider('Delta 13 (o/oo)',-27.01,-23.8,-25.8)
+  Delta_15= st.slider('Delta_15_N_(o/oo)',7.6,10.0,8.7)
+  Delta_13  =st.slider('Delta_13_C_(o/oo)',-27.01,-23.8,-25.8)
 #create a dataframe
 data = {'Species': Species,
-        'Culmen Length (mm)':Culmen_Length ,
-         'Culmen Depth (mm)':Culmen_Depth,
-        'Flipper length (mm)':Flipper_length ,
+        'Culmen_Length_(mm)':Culmen_Length ,
+         'Culmen_Depth_(mm)':Culmen_Depth,
+        'Flipper_length_(mm)':Flipper_length ,
         'Sex':Sex,
-        'Delta 15 (o/oo)': Delta_15,
-        'Delta 13 (o/oo)':Delta_13  }
+        'Delta_15_N_(o/oo)': Delta_15,
+        'Delta_13_C_(o/oo)':Delta_13  }
 input_df = pd.DataFrame(data, index=[0])
 input_df
 input_penguins = pd.concat([input_df, X], axis =0)
