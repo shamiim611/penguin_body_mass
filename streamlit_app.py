@@ -56,6 +56,7 @@ data = {'Species': Species,
 input_df = pd.DataFrame(data, index=[0])
 input_df
 input_penguins = pd.concat([input_df, X], axis =0)
+input_penguins
 # build pipeline and model
 # Select the numerical/categorical columns
 numerical_cols = input_penguins.select_dtypes(include= ['float64']).columns
