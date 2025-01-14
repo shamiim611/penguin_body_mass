@@ -79,7 +79,7 @@ model = Ridge(alpha =0.1)
 complete_pipeline = Pipeline([('preprocessor',preprocessor),
                  ('estimator',Ridge(alpha =0.1))
                  ])
-complete_pipeline.fit(input_penguins, y_train)
+complete_pipeline.fit(input_penguins, y)
 
  #apply model to make predictions
 predictions = complete_pipeline.predict(input_penguins)
