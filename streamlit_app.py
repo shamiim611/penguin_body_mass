@@ -85,9 +85,10 @@ complete_pipeline = Pipeline([('preprocessor',preprocessor),
 complete_pipeline.fit(X_train, y_train)
 
  #apply model to make predictions
-predictions = complete_pipeline.predict(X_train)
+predictions = complete_pipeline.predict(X)
 predicted_mass = complete_pipeline.predict(input_df)
-predicted_mass
+st.write('Predicted Mass:', predicted_mass)
+
                      
                      
                      
