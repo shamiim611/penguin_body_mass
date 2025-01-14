@@ -46,11 +46,12 @@ with st.sidebar:
   Delta_13_C  =st.slider('Delta 13 (o/oo)',-27.01,-23.8,-25.8)
 #create a dataframe
 data = {'Species':Species,
-                     'Culmen Length (mm)':Culmen_length,
-                     'Flipper length (mm)': Flipper_Length,
-                     'Sex':Sex,
-                     'Delta 15 (o/oo)':Delta_15_N,
-                     'Delta 13 (o/oo)':Delta_13_C}
+        'Culmen Length (mm)':Culmen Length (mm),
+         'Culmen Depth (mm)':Culmen Depth (mm),
+        'Flipper length (mm)': Flipper length (mm),
+        'Sex':Sex,
+        'Delta 15 (o/oo)': Delta 15 (o/oo),
+        'Delta 13 (o/oo)': Delta 13 (o/oo)}
 input_df = pd.DataFrame(data, index=[0])
 input_penguins = pd.concat([input_df, X], axis =0)
 # build pipeline and model
