@@ -58,8 +58,8 @@ input_df
 input_penguins = pd.concat([input_df, X], axis =0)
 # build pipeline and model
 # Select the numerical/categorical columns
-numerical_cols = X.select_dtypes(include= ['float64']).columns
-categorical_cols = X.select_dtypes(include= ['object']).columns
+numerical_cols = input_penguins.select_dtypes(include= ['float64']).columns
+categorical_cols = input_penguins.select_dtypes(include= ['object']).columns
 
 # Numerical pipeline
 numerical_transformer = Pipeline([('scaler',StandardScaler())])
@@ -72,20 +72,17 @@ preprocessor =  ColumnTransformer([
         ('cat', categorical_transformer, categorical_cols)
 ])
 
-#train_test_split
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, stratify=X['Species'], random_state=0
-)
+
 #ridge_model_building
 model = Ridge(alpha =0.1)
 #model evaluation using train data
 complete_pipeline = Pipeline([('preprocessor',preprocessor),
                  ('estimator',Ridge(alpha =0.1))
                  ])
-complete_pipeline.fit(X_train, y_train)
+complete_pipeline.fit(input_penguins, y_train)
 
  #apply model to make predictions
-predictions = complete_pipeline.predict(X)
+predictions = complete_pipeline.predict(input_penguins)
 predicted_mass = complete_pipeline.predict(input_df)
 st.write('Predicted Mass:', predicted_mass)
 
