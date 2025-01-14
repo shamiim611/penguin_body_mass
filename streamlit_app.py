@@ -25,7 +25,7 @@ with st.expander('Data'):
   df
   st.write('**X**')
   X = df.drop(columns= 'Body_Mass_(g)', axis =1)
-  X.dropna()
+  
   st.write('**y**')
   y = df['Body_Mass_(g)']
   y
@@ -38,7 +38,9 @@ with st.expander('Data visualization'):
 # input features
 with st.sidebar:
   st.header('Input features')
-  Species = st.selectbox('Species',('Adelie Penguin','Gentoo penguin','Chinstrap penguin'))
+  Species = st.selectbox('Species',('Adelie Penguin(Pygoscelis adeliae)',
+                                    'Gentoo penguin(Pygoscelis papua)',
+                                    'Chinstrap penguin(Pygoscelis antarctica)')
   Culmen_Length= st.slider('Culmen_Length_(mm)',32.1,59.6,44.25)
   Culmen_Depth = st.slider('Culmen_Depth_(mm)',13.1,21.5,17.4)
   Flipper_length =st.slider('Flipper_length_(mm)',172,231,197)
@@ -53,13 +55,13 @@ data = {'Species': Species,
         'Sex':Sex,
         'Delta_15_N_(o/oo)': Delta_15,
         'Delta_13_C_(o/oo)':Delta_13  }
-input_df = pd.DataFrame(data, index=[0])
+input_df = pd.DataFrame(data, index=[344])
 input_df
 input_penguins = pd.concat([input_df, X], axis =0)
 input_penguins
 # build pipeline and model
 # Select the numerical/categorical columns
-numerical_cols = input_penguins.select_dtypes(include= ['float64']).columns
+numerical_cols = input_penguins.select_dtypes(include= ['float64','int32']).columns
 categorical_cols = input_penguins.select_dtypes(include= ['object']).columns
 
 # Numerical pipeline
@@ -80,11 +82,10 @@ model = Ridge(alpha =0.1)
 complete_pipeline = Pipeline([('preprocessor',preprocessor),
                  ('estimator',Ridge(alpha =0.1))
                  ])
-complete_pipeline.fit(input_penguins.dropna(), y)
+complete_pipeline.fit(input_penguins, y)
 
  #apply model to make predictions
-predictions = complete_pipeline.predict(input_penguins.dropna())
-predicted_mass = complete_pipeline.predict(input_df.dropna())
+predicted_mass = complete_pipeline.predict(input_df)
 st.write('Predicted Mass:', predicted_mass)
 
                      
