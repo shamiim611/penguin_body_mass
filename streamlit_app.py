@@ -3,6 +3,14 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import sklearn
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.linear_model import Ridge  
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.compose import ColumnTransformer
+from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import train_test_split
+
 
 
 st.title('Machine learning app')
@@ -45,7 +53,38 @@ data = {'Species':Species,
                      'Delta 13 (o/oo)':Delta_13_C}
 input_df = pd.DataFrame(data, index=[0])
 input_penguins = pd.concat([input_df, X], axis =0)
-                     
+# build pipeline and model
+# Select the numerical/categorical columns
+numerical_cols = X.select_dtypes(include= ['float64']).columns
+categorical_cols = X.select_dtypes(include= ['object']).columns
+
+# Numerical pipeline
+numerical_transformer = Pipeline([('scaler',StandardScaler())])
+#categorical pipeline
+categorical_transformer = Pipeline([('encoder',OneHotEncoder( handle_unknown='ignore', drop='first'))
+                                     ])
+#combine 
+preprocessor =  ColumnTransformer([
+        ('num', numerical_transformer, numerical_cols),
+        ('cat', categorical_transformer, categorical_cols)
+])
+
+#train_test_split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, stratify=X['Species'], random_state=0
+)
+#ridge_model_building
+model = Ridge(alpha =0.1)
+#model evaluation using train data
+complete_pipeline = Pipeline([('preprocessor',preprocessor),
+                 ('estimator',Ridge(alpha =0.1))
+                 ])
+complete_pipeline.fit(X_train, y_train)
+
+ #apply model to make predictions
+predictions = complete_pipeline.predict(X_train)
+predicted_mass = complete_pipeline.predict(input_df)
+predicted_mass
                      
                      
                      
