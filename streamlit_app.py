@@ -25,7 +25,7 @@ with st.expander('Data'):
   df
   st.write('**X**')
   X = df.drop(columns= 'Body_Mass_(g)', axis =1)
-  X
+  X.dropna()
   st.write('**y**')
   y = df['Body_Mass_(g)']
   y
