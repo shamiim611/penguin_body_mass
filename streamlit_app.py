@@ -40,7 +40,8 @@ with st.sidebar:
   st.header('Input features')
   Species = st.selectbox('Species',('Adelie Penguin(Pygoscelis adeliae)',
                                     'Gentoo penguin(Pygoscelis papua)',
-                                    'Chinstrap penguin(Pygoscelis antarctica)')
+                                    'Chinstrap penguin(Pygoscelis antarctica)'
+                                   ))
   Culmen_Length= st.slider('Culmen_Length_(mm)',32.1,59.6,44.25)
   Culmen_Depth = st.slider('Culmen_Depth_(mm)',13.1,21.5,17.4)
   Flipper_length =st.slider('Flipper_length_(mm)',172,231,197)
