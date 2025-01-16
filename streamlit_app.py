@@ -25,10 +25,12 @@ with st.expander('Data'):
   df
   st.write('**X**')
   X = df.drop(columns= 'Body_Mass_(g)', axis =1)
+  X.shape
   X
   
   st.write('**y**')
   y = df['Body_Mass_(g)']
+  y.shape
   y
 with st.expander('Data visualization'):
   st.scatter_chart(df, x= 'Flipper_Length_(mm)', y ='Body_Mass_(g)', color ='Species')
@@ -57,8 +59,10 @@ data = {'Species': Species,
         'Sex':Sex,
         'Delta_15_N_(o/oo)': Delta_15,
         'Delta_13_C_(o/oo)':Delta_13  }
+st.write('**user input df**')
 input_df = pd.DataFrame(data, index=[344])
 input_df
+st.write('**combined df**')
 input_penguins = pd.concat([input_df, X], axis =0)
 input_penguins
 # build pipeline and model
