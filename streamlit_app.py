@@ -95,9 +95,7 @@ complete_pipeline.fit(X, y)
  #apply model to make predictions
 predicted_mass = complete_pipeline.predict(input_df)
 predicted_mass_rounded = round(predicted_mass[0], 2)  # Round to two decimal places
-st.write(f'Predicted Body Mass: {predicted_mass_rounded} g')
-
-
+st.write('Predicted Body Mass(g) according to selected attributes:', predicted_mass_rounded)
 
                      
                      
