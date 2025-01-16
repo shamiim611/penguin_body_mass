@@ -47,7 +47,7 @@ with st.sidebar:
                                    ))
   Culmen_Length= st.slider('Culmen_Length_(mm)',32.1,59.6,44.25)
   Culmen_Depth = st.slider('Culmen_Depth_(mm)',13.1,21.5,17.4)
-  Flipper_length =st.slider('Flipper_length_(mm)',172,231,197)
+  Flipper_Length =st.slider('Flipper_Length_(mm)',172,231,197)
   Sex = st.selectbox('Sex',('MALE','FEMALE'))
   Delta_15= st.slider('Delta_15_N_(o/oo)',7.6,10.0,8.7)
   Delta_13  =st.slider('Delta_13_C_(o/oo)',-27.01,-23.8,-25.8)
@@ -55,7 +55,7 @@ with st.sidebar:
 data = {'Species': Species,
         'Culmen_Length_(mm)':Culmen_Length ,
          'Culmen_Depth_(mm)':Culmen_Depth,
-        'Flipper_length_(mm)':Flipper_length ,
+        'Flipper_Length_(mm)':Flipper_Length ,
         'Sex':Sex,
         'Delta_15_N_(o/oo)': Delta_15,
         'Delta_13_C_(o/oo)':Delta_13  }
