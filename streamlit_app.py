@@ -61,9 +61,11 @@ data = {'Species': Species,
         'Delta_13_C_(o/oo)':Delta_13  }
 st.write('**user input df**')
 input_df = pd.DataFrame(data, index=[344])
+input_df.shape
 input_df
 st.write('**combined df**')
 input_penguins = pd.concat([input_df, X], axis =0)
+input_penguins.shape
 input_penguins
 # build pipeline and model
 # Select the numerical/categorical columns
